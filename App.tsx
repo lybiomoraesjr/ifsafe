@@ -9,6 +9,7 @@ import theme from "./src/theme";
 
 import SignIn from "./src/screens/SignIn";
 import Loading from "./src/components/Loading";
+import { StatusBar } from "react-native";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,6 +22,11 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
       <SignIn />
     </ThemeProvider>
   );

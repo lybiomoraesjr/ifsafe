@@ -1,8 +1,16 @@
 import React from "react";
-import { Container } from "./SignIn.styles";
+import { Container, Title, Slogan } from "./SignIn.styles";
+
+import backgroundImg from "../../assets/background.png";
 
 const SignIn: React.FC = () => {
-  return <Container></Container>;
+  return (
+    <Container source={backgroundImg}>
+      <Title>IF-safe</Title>
+
+      <Slogan>Segurança em primeiro lugar</Slogan>
+    </Container>
+  );
 };
 
 export default SignIn;
