@@ -1,11 +1,11 @@
 import React from "react";
 import { Container } from "./Home.styles";
-import { Text } from "react-native";
+import HomeHeader from "../../components/HomeHeader";
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <Text>Home</Text>
+      <HomeHeader />
     </Container>
   );
 };
