@@ -3,9 +3,12 @@ import {
   createBottomTabNavigator,
   BottomTabNavigationProp,
 } from "@react-navigation/bottom-tabs";
+
 import { House } from "phosphor-react-native";
-import Profile from "../screens/Profile";
+
 import Home from "../screens/Home";
+import Profile from "../screens/Profile";
+
 import theme from "../theme";
 
 type AppRoutes = {
