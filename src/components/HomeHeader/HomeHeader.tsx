@@ -1,42 +1,40 @@
-import { TouchableOpacity } from 'react-native'
-import { Power } from 'phosphor-react-native'
-import { useUser, useApp } from '@realm/react';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import React from "react";
+import { TouchableOpacity } from "react-native";
+import { Power } from "phosphor-react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { Container, Greeting, Message, Name, Picture } from './HomeHeader.styles';
+import {
+  Container,
+  Greeting,
+  Message,
+  Name,
+  Picture,
+} from "./HomeHeader.styles";
 
-import theme from '../../theme';
+import theme from "../../theme";
 
-export function HomeHeader() {
-  const user = useUser();
-  const app = useApp();
+const HomeHeader: React.FC = () => {
   const insets = useSafeAreaInsets();
 
   const paddingTop = insets.top + 32;
 
-  function handleLogOut() {
-    app.currentUser?.logOut();
-  }
-
   return (
     <Container style={{ paddingTop }}>
-      <Picture 
-        source={{ uri: user?.profile.pictureUrl }}
-        placeholder='L184i9ofbHof00ayjsay~qj[ayj@'
+      <Picture
+        source={{ uri: "https://github.com/lybiomoraesjr.png" }}
+        placeholder="L184i9ofbHof00ayjsay~qj[ayj@"
       />
       <Greeting>
-        <Message>
-          Olá
-        </Message>
+        <Message>Olá</Message>
 
-        <Name>
-          {user?.profile.name}
-        </Name>
+        <Name>Lybio</Name>
       </Greeting>
 
-      <TouchableOpacity activeOpacity={0.7} onPress={handleLogOut}>
+      <TouchableOpacity activeOpacity={0.7}>
         <Power size={32} color={theme.COLORS.GRAY_400} />
       </TouchableOpacity>
     </Container>
   );
-}
+};
+
+export default HomeHeader;
